@@ -1,0 +1,113 @@
+%section#forms
+  .page-header
+    %h1 New Accommodation Request
+
+  %form.form-horizontal.well
+    %fieldset
+      %legend Business Type
+      .control-group
+        %label.control-label{:for => 'type'} Type
+        .controls
+          %select#type
+            %option Business
+            %option Personal
+            %option Guest visit
+      .control-group
+        %label.control-label{:for => 'project_code'} Project code
+        .controls
+          %input#project_code.input-large{:type => 'text'}
+            %p.help-block Use the actual project code if this is related to your project.
+    %fieldset
+      %legend Basic Information
+      .control-group
+        %label.control-label{:for => 'name'} Name
+        .controls
+          %input#name.input-large{:type => 'text'}
+      .control-group
+        %label.control-label{:for => "Category"} Category
+        .controls
+          %label.radio
+            %input{:name => 'Category', :type => 'radio', :checked => 'checked'}
+            Apartment
+          %label.radio
+            %input{:name => 'Category', :type => 'radio'}
+            Hotel
+      .control-group
+        %label.control-label{:for => 'start_date'} Start Date
+        .controls
+          %input#start_date.input-medium{:type => 'text'}
+      .control-group
+        .controls
+          %label.checkbox
+            %input#name{:type => 'checkbox'}
+            I'm not sure the end date
+      .control-group
+        %label.control-label{:for => 'end_date'} End Date
+        .controls
+          %input#end_date.input-medium{:type => 'text'}
+    %fieldset
+      %legend Other Requirement
+      .control-group
+        .controls
+          %label.checkbox
+            %input#need_house_clean{:type => 'checkbox'}
+            I need house clean service
+      .control-group
+        %label.control-label{:for => 'house_clean'} House clean
+        .controls
+          %select#house_clean
+            %option Everyday
+            %option Every two days
+            %option Weekly
+            %option Biweekly
+      .control-group
+        .controls
+          %label.checkbox
+            %input#need_living_goods{:type => 'checkbox'}
+            I need living goods
+      .control-group
+        %label.control-label{:for => 'house_clean'} Living Goods
+        .controls
+          %label.checkbox.inline.span2
+            %input#network{:type => 'checkbox'}
+            Network
+          %label.checkbox.inline.span2
+            %input#network{:type => 'checkbox'}
+            Wi-Fi
+          %label.checkbox.inline.span2
+            %input#network{:type => 'checkbox'}
+            Cable Television
+          %label.checkbox.inline.span2
+            %input#network{:type => 'checkbox'}
+            Air Condition
+          %label.checkbox.inline.span2
+            %input#network{:type => 'checkbox'}
+            Landing Phone
+          %label.checkbox.inline.span2
+            %input#network{:type => 'checkbox'}
+            Washing Machine
+          %label.checkbox.inline.span2
+            %input#network{:type => 'checkbox'}
+            Dryer
+      .control-group
+        %label.control-label{:for => 'notes'} Notes
+        .controls
+          %textarea.input-xxlarge{:rows => '6'}
+    .form-actions
+      %button.btn.btn-primary{:type => 'submit'} Save
+      %button.btn{:type => 'reset'} Cancel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
