@@ -2,49 +2,49 @@
   .page-header
     %h1 New Accommodation Request
 
-  %form.form-horizontal.well
+  %form.form-horizontal.well{:method => 'POST'}
     %fieldset
       %legend Business Type
       .control-group
-        %label.control-label{:for => 'type'} Type
+        %label.control-label{:for => 'business_type'} Business Type
         .controls
-          %select#type
+          %select#business_type{:name => 'business_type'}
             %option Business
             %option Personal
             %option Guest visit
       .control-group
         %label.control-label{:for => 'project_code'} Project code
         .controls
-          %input#project_code.input-large{:type => 'text'}
+          %input#project_code.input-large{:type => 'text', :name => 'project_code'}
             %p.help-block Use the actual project code if this is related to your project.
     %fieldset
       %legend Basic Information
       .control-group
         %label.control-label{:for => 'name'} Name
         .controls
-          %input#name.input-large{:type => 'text'}
+          %input#name.input-large{:type => 'text', :name => 'name'}
       .control-group
-        %label.control-label{:for => "Category"} Category
+        %label.control-label{:for => "type"} Accommodation Type
         .controls
           %label.radio
-            %input{:name => 'Category', :type => 'radio', :checked => 'checked'}
+            %input{:name => 'type', :type => 'radio', :value => 'apartment', :checked => 'checked'}
             Apartment
           %label.radio
-            %input{:name => 'Category', :type => 'radio'}
+            %input{:name => 'type', :type => 'radio', :value => 'hotel'}
             Hotel
       .control-group
         %label.control-label{:for => 'start_date'} Start Date
         .controls
-          %input#start_date.input-medium{:type => 'text'}
+          %input#start_date.input-medium{:type => 'text', :name => 'start_date'}
       .control-group
         .controls
           %label.checkbox
-            %input#name{:type => 'checkbox'}
+            %input#no_end_date{:type => 'checkbox'}
             I'm not sure the end date
       .control-group
         %label.control-label{:for => 'end_date'} End Date
         .controls
-          %input#end_date.input-medium{:type => 'text'}
+          %input#end_date.input-medium{:type => 'text', :name => 'end_date'}
     %fieldset
       %legend Other Requirement
       .control-group
@@ -55,7 +55,7 @@
       .control-group
         %label.control-label{:for => 'house_clean'} House clean
         .controls
-          %select#house_clean
+          %select#house_clean{:name => 'house_clean'}
             %option Everyday
             %option Every two days
             %option Weekly
@@ -69,30 +69,30 @@
         %label.control-label{:for => 'house_clean'} Living Goods
         .controls
           %label.checkbox.inline.span2
-            %input#network{:type => 'checkbox'}
+            %input#network{:type => 'checkbox', :name => 'network'}
             Network
           %label.checkbox.inline.span2
-            %input#network{:type => 'checkbox'}
+            %input#wifi{:type => 'checkbox', :name => 'wifi'}
             Wi-Fi
           %label.checkbox.inline.span2
-            %input#network{:type => 'checkbox'}
+            %input#cable_television{:type => 'checkbox', :name => 'cable_television'}
             Cable Television
           %label.checkbox.inline.span2
-            %input#network{:type => 'checkbox'}
+            %input#air_condition{:type => 'checkbox', :name => 'air_condition'}
             Air Condition
           %label.checkbox.inline.span2
-            %input#network{:type => 'checkbox'}
+            %input#landing_phone{:type => 'checkbox', :name => 'landing_phone'}
             Landing Phone
           %label.checkbox.inline.span2
-            %input#network{:type => 'checkbox'}
+            %input#washing_machine{:type => 'checkbox', :name => 'washing_machine'}
             Washing Machine
           %label.checkbox.inline.span2
-            %input#network{:type => 'checkbox'}
+            %input#dryer{:type => 'checkbox', :name => 'dryer'}
             Dryer
       .control-group
         %label.control-label{:for => 'notes'} Notes
         .controls
-          %textarea.input-xxlarge{:rows => '6'}
+          %textarea#notes.input-xxlarge{:rows => '6', :name => 'notes'}
     .form-actions
       %button.btn.btn-primary{:type => 'submit'} Save
       %button.btn{:type => 'reset'} Cancel
