@@ -8,13 +8,21 @@ require './init.rb'
 set :haml, :format => :html5
 
 get '/' do
-  haml :index
+  redirect '/new'
 end
 
-post '/' do
-  require 'pp'; pp params
+get '/new' do
+  haml :new
+end
 
+post '/new' do
   @accommodation = Accommodation.create(params)
 
-  json JSON.parse(@accommodation.to_json)
+  redirect '/recent'
+end
+
+get '/recent' do
+  @accommodations = Accommodation.all
+
+  haml :recent
 end

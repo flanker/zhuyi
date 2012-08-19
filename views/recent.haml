@@ -1,0 +1,20 @@
+%section#forms
+  .page-header
+    %h1 Recent Accommodation Requests
+
+  %table.table.table-striped.table-bordered
+    %thead
+      %tr
+        %th Business Type
+        %th Project Code
+        %th Name
+        %th Start Date
+        %th End Date
+    %tbody
+      - @accommodations.each do |accommodation|
+        %tr
+          %td= accommodation.business_type
+          %td= accommodation.project_code
+          %td= accommodation.name
+          %td= accommodation.start_date
+          %td= accommodation.end_date
