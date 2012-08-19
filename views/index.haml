@@ -15,14 +15,14 @@
       .control-group
         %label.control-label{:for => 'project_code'} Project code
         .controls
-          %input#project_code.input-large{:type => 'text', :name => 'project_code'}
+          %input#project_code.input-large{:type => 'text', :name => 'project_code', :placeholder => 'like TW_CODE_1'}
             %p.help-block Use the actual project code if this is related to your project.
     %fieldset
       %legend Basic Information
       .control-group
         %label.control-label{:for => 'name'} Name
         .controls
-          %input#name.input-large{:type => 'text', :name => 'name'}
+          %input#name.input-large{:type => 'text', :name => 'name', :placeholder => 'Family name, Given name'}
       .control-group
         %label.control-label{:for => "type"} Accommodation Type
         .controls
@@ -35,7 +35,7 @@
       .control-group
         %label.control-label{:for => 'start_date'} Start Date
         .controls
-          %input#start_date.input-medium{:type => 'text', :name => 'start_date'}
+          %input#start_date.input-medium{:type => 'text', :name => 'start_date', :placeholder => 'yyyy/mm/dd'}
       .control-group
         .controls
           %label.checkbox
@@ -44,7 +44,7 @@
       .control-group
         %label.control-label{:for => 'end_date'} End Date
         .controls
-          %input#end_date.input-medium{:type => 'text', :name => 'end_date'}
+          %input#end_date.input-medium{:type => 'text', :name => 'end_date', :placeholder => 'yyyy/mm/dd'}
     %fieldset
       %legend Other Requirement
       .control-group
@@ -92,7 +92,7 @@
       .control-group
         %label.control-label{:for => 'notes'} Notes
         .controls
-          %textarea#notes.input-xxlarge{:rows => '6', :name => 'notes'}
+          %textarea#notes.input-xxlarge{:rows => '6', :name => 'notes', :placeholder => 'Anything else you want to say...'}
     .form-actions
       %button.btn.btn-primary{:type => 'submit'} Save
       %button.btn{:type => 'reset'} Cancel
