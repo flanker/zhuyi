@@ -7,4 +7,4 @@ DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite:///#{PROJECT_ROOT}/db/
 require './models.rb'
 
 DataMapper.finalize
-DataMapper.auto_upgrade!
+# DataMapper.auto_upgrade!
