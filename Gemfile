@@ -5,5 +5,12 @@ gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'haml'
 gem 'jasmine'
-gem 'datamapper'
-gem 'dm-sqlite-adapter'
+
+group :development do
+  gem 'datamapper'
+  gem 'dm-sqlite-adapter'
+end
+
+group :production do
+  gem 'pg'
+end
