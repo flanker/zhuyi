@@ -1,11 +1,22 @@
+class BusinessType
+  BUSINESS = 'Business'
+  PERSONAL = 'Personal'
+  GUEST_VISIT = 'Guest visit'
+end
+
+class Type
+  APARTMENT = 'Apartment'
+  HOTEL = 'Hotel'
+end
+
 class Accommodation
   include DataMapper::Resource
 
   property :id, Integer, :serial => true, :key => true
-  property :business_type, String
+  property :business_type, String, :default => BusinessType::BUSINESS
   property :project_code, String
   property :name, String
-  property :type, String
+  property :type, String, :default => Type::APARTMENT
   property :start_date, String
   property :end_date, String
   property :house_clean, String
@@ -18,3 +29,5 @@ class Accommodation
   property :dryer, Boolean
   property :notes, Text, :lazy => false
 end
+
+

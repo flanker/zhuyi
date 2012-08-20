@@ -1,6 +1,5 @@
 require 'sinatra'
 require 'sinatra/content_for'
-require 'sinatra/json'
 require 'haml'
 require 'json'
 require './init.rb'
@@ -8,21 +7,25 @@ require './init.rb'
 set :haml, :format => :html5
 
 get '/' do
-  redirect '/new'
+  haml :index
 end
 
-get '/new' do
-  haml :new
+get '/accommodations/new' do
+  json Accommodation.new
 end
 
-post '/new' do
-  @accommodation = Accommodation.create(params)
-
-  redirect '/recent'
+post '/accommodations/new' do
+  data = JSON.parse(request.body.read)
+  json Accommodation.create(data)
 end
 
-get '/recent' do
-  @accommodations = Accommodation.all
+get '/accommodations' do
+  json Accommodation.all
+end
 
-  haml :recent
+private
+
+def json model
+  content_type 'application/json'
+  model.to_json
 end
