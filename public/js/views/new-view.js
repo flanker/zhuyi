@@ -15,6 +15,7 @@ App.views.NewView = Backbone.MeningesView.extend({
   render: function () {
     var html = App.helper.renderTemplate('new', {});
     $(this.el).html(html);
+    $('.date-input', this.el).datepicker();
   },
 
   save: function (e) {

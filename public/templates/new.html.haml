@@ -35,7 +35,7 @@
       .control-group
         %label.control-label{for: 'start_date'} Start Date
         .controls
-          %input#start_date.input-medium.meninges{type: 'text', name: 'start_date', placeholder: 'yyyy/mm/dd'}
+          %input#start_date.input-medium.meninges.date-input{type: 'text', name: 'start_date', placeholder: 'yyyy/mm/dd', 'data-date-format': 'yyyy/mm/dd'}
       .control-group
         .controls
           %label.checkbox
@@ -44,7 +44,7 @@
       .control-group
         %label.control-label{for: 'end_date'} End Date
         .controls
-          %input#end_date.input-medium.meninges{type: 'text', name: 'end_date', placeholder: 'yyyy/mm/dd'}
+          %input#end_date.input-medium.meninges.date-input{type: 'text', name: 'end_date', placeholder: 'yyyy/mm/dd', 'data-date-format': 'yyyy/mm/dd'}
     %fieldset
       %legend Other Requirement
       .control-group
