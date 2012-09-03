@@ -1,9 +1,3 @@
-App.config.templates = [
-  'new',
-  'recent',
-  'business-type-fieldset'
-];
-
 var templatesLoaded = false;
 
 var loadTemplates = function (callback) {
@@ -27,18 +21,42 @@ var loadTemplates = function (callback) {
   }
 };
 
+var fieldFor = function (label, scope) {
+  var labelElement = $('label:contains("' + label + '")', scope);
+  return $('#' + labelElement.prop('for'), scope);
+};
+
+var optionFor = function (option, scope) {
+  return $('option:contains("' + option + '")', scope);
+};
+
+var select = function (option, scope) {
+  $('select', scope).val(option).trigger('change');
+};
+
 beforeEach(function () {
 
   this.addMatchers({
 
-    toHaveLegend: function (text) {
+    toHaveLegend: function (expectedText) {
       if (!(this.actual instanceof jQuery)) {
         this.actual = $(this.actual);
       }
       this.message = function () {
-        return "Expected [" + this.actual.text() + "] to be [" + text + "]";
+        return "Expected [" + this.actual.text() + "] to be [" + expectedText + "]";
       };
-      return _(this.actual.text()).clean() === text;
+      return _(this.actual.text()).clean() === expectedText;
+    },
+
+    toHaveOptions: function (expectedOptions) {
+      if (!(this.actual instanceof jQuery)) {
+        this.actual = $(this.actual);
+      }
+      var actualOptions = _(this.actual.children()).map(function (option) {
+        return _(option.text).clean();
+      });
+      return _(actualOptions).difference(expectedOptions).length === 0 &&
+        _(expectedOptions).difference(actualOptions).length === 0;
     }
 
   });

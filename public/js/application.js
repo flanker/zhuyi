@@ -1,8 +1,3 @@
-App.config.templates = [
-  'new',
-  'recent'
-];
-
 App.router.AppRouter = Backbone.Router.extend({
 
   routes: {

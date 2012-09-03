@@ -7,6 +7,7 @@ src_files:
     - public/js/lib/meninges-model.js
     - public/js/lib/meninges-view.js
     - public/js/base.js
+    - public/js/templates.js
     - public/js/models/*.js
     - public/js/views/*.js
     - spec/javascripts/support/jasmine-jquery-1.3.1.js
