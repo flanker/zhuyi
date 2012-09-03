@@ -6,6 +6,8 @@ gem 'sinatra-contrib'
 gem 'haml'
 gem 'jasmine'
 gem 'datamapper'
+gem 'cucumber'
+gem 'capybara'
 
 group :development do
   gem 'dm-sqlite-adapter'
