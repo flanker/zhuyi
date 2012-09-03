@@ -39,13 +39,13 @@ beforeEach(function () {
   this.addMatchers({
 
     toHaveLegend: function (expectedText) {
-      if (!(this.actual instanceof jQuery)) {
-        this.actual = $(this.actual);
-      }
+      var legends = $('legend', this.actual);
       this.message = function () {
-        return "Expected [" + this.actual.text() + "] to be [" + expectedText + "]";
+        return "Expected [" + legends.text() + "] to be [" + expectedText + "]";
       };
-      return _(this.actual.text()).clean() === expectedText;
+      return _(legends).any(function (legend) {
+        return _($(legend).text()).clean() === expectedText;
+      });
     },
 
     toHaveOptions: function (expectedOptions) {

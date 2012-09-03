@@ -4,6 +4,8 @@ src_files:
     - public/js/lib/underscore.string.js
     - public/js/lib/haml.js
     - public/js/lib/backbone.js
+    - public/js/lib/bootstrap.min.js
+    - public/js/lib/bootstrap-datepicker.js
     - public/js/lib/meninges-model.js
     - public/js/lib/meninges-view.js
     - public/js/base.js

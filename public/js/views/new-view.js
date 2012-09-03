@@ -16,6 +16,12 @@ App.views.NewView = Backbone.MeningesView.extend({
     var html = App.helper.renderTemplate('new', {});
     $(this.el).html(html);
     $('.date-input', this.el).datepicker({autoclose: true});
+
+    var childViews = [
+      new App.views.BusinessTypeFieldsetView({model: this.model}).el
+    ];
+
+    $('form', this.el).prepend(childViews);
   },
 
   save: function (e) {

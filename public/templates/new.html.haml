@@ -4,20 +4,6 @@
 
   %form.form-horizontal.well{method: 'POST'}
     %fieldset
-      %legend Business Type
-      .control-group
-        %label.control-label{for: 'business_type'} Business Type
-        .controls
-          %select#business_type.meninges{name: 'business_type'}
-            %option Business
-            %option Personal
-            %option Guest visit
-      .control-group
-        %label.control-label{for: 'project_code'} Project code
-        .controls
-          %input#project_code.input-large.meninges{type: 'text', name: 'project_code', placeholder: 'like TW_CODE_1'}
-            %p.help-block Use the actual project code if this is related to your project.
-    %fieldset
       %legend Basic Information
       .control-group
         %label.control-label{for: 'name'} Name
