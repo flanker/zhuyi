@@ -10,14 +10,12 @@
         .controls
           %input#name.input-large.meninges{type: 'text', name: 'name', placeholder: 'Family name, Given name'}
       .control-group
-        %label.control-label{for: "type"} Accommodation Type
+        %label.control-label{for: 'type'} Accommodation Type
         .controls
-          %label.radio
-            %input.meninges{name: 'type', type: 'radio', value: 'apartment', checked: 'checked'}
-            Apartment
-          %label.radio
-            %input.meninges{name: 'type', type: 'radio', value: 'hotel'}
-            Hotel
+          %label.radio{for: 'type-apartment'} Apartment
+            %input#type-apartment.meninges{name: 'type', type: 'radio', value: 'apartment', checked: 'checked'}
+          %label.radio{for: 'type-hotel'} Hotel
+            %input#type-hotel.meninges{name: 'type', type: 'radio', value: 'hotel'}
       .control-group
         %label.control-label{for: 'start_date'} Start Date
         .controls
@@ -35,8 +33,8 @@
       %legend Other Requirement
       .control-group
         .controls
-          %label.checkbox
-            %input#need_house_clean{type: 'checkbox'}
+          %label.checkbox{for: 'need_house_clean'}
+            %input#need_house_clean{name: 'need_house_clean', type: 'checkbox'}
             I need house clean service
       .control-group
         %label.control-label{for: 'house_clean'} House clean
@@ -48,31 +46,31 @@
             %option Biweekly
       .control-group
         .controls
-          %label.checkbox
-            %input#need_living_goods{type: 'checkbox'}
+          %label.checkbox{for: 'need_living_goods'}
+            %input#need_living_goods{name: 'need_living_goods', type: 'checkbox'}
             I need living goods
       .control-group
         %label.control-label{for: 'living_goods'} Living Goods
         .controls
-          %label.checkbox.inline.span2
+          %label.checkbox.inline.span2{for: 'network'}
             %input#network.meninges{type: 'checkbox', name: 'network', value: '1'}
             Network
-          %label.checkbox.inline.span2
+          %label.checkbox.inline.span2{for: 'wifi'}
             %input#wifi.meninges{type: 'checkbox', name: 'wifi', value: '1'}
             Wi-Fi
-          %label.checkbox.inline.span2
+          %label.checkbox.inline.span2{for: 'cable_television'}
             %input#cable_television.meninges{type: 'checkbox', name: 'cable_television', value: '1'}
             Cable Television
-          %label.checkbox.inline.span2
+          %label.checkbox.inline.span2{for: 'air_condition'}
             %input#air_condition.meninges{type: 'checkbox', name: 'air_condition', value: '1'}
             Air Condition
-          %label.checkbox.inline.span2
+          %label.checkbox.inline.span2{for: 'landing_phone'}
             %input#landing_phone.meninges{type: 'checkbox', name: 'landing_phone', value: '1'}
             Landing Phone
-          %label.checkbox.inline.span2
+          %label.checkbox.inline.span2{for: 'washing_machine'}
             %input#washing_machine.meninges{type: 'checkbox', name: 'washing_machine', value: '1'}
             Washing Machine
-          %label.checkbox.inline.span2
+          %label.checkbox.inline.span2{for: 'dryer'}
             %input#dryer.meninges{type: 'checkbox', name: 'dryer', value: '1'}
             Dryer
       .control-group
