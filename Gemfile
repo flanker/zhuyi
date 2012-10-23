@@ -9,6 +9,10 @@ gem 'datamapper'
 gem 'cucumber'
 gem 'capybara'
 
+group :test do
+  gem 'ruby-debug19'
+end
+
 group :development do
   gem 'dm-sqlite-adapter'
 end
